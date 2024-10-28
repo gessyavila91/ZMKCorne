@@ -15,84 +15,75 @@
         compatible = "zmk,keymap";
 
         main_layer {
-            display-name = "Main";
-
-            //
-            //  |---------------------------------------------------------| |--------------------------------------------------------|
-            //  |   ESC   |   Q    |   W    |   E     |   R     |   T     | |    Y   |   U     |   I     |   O   |   P    |   BKSP   |
-            //  |   TAB   |   A    |   S    |   D     |   F     |   G     | |    H   |   J     |   K     |   L   |   ;    |   '      |
-            //  |   SHFT  |   Z    |   X    |   C     |   V     |   B     | |    N   |   M     |   ,     |   .   |   /    |   SHFT   |
-            //  |---------------------------|   LGUI  |   SPC   |   LWR   | |    ENT |   RSE   |   ALT   |---------------------------|
-            //                              |-----------------------------| |----------------------------|
-
+            label = "Main";
             bindings = <
-&kp LEFT_CONTROL  &kp Q  &kp W  &kp E     &kp R      &kp T    &kp Y  &kp U    &kp I              &kp O    &kp P     &kp BSPC
-&kp TAB           &kp A  &kp S  &kp D     &kp F      &kp G    &kp H  &kp J    &kp K              &kp L    &kp SEMI  &kp SQT
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V      &kp B    &kp N  &kp M    &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp LGUI  &kp SPACE  &mo 1    &mo 2  &kp RET  &kp RIGHT_COMMAND
+//|-------------|------|-------|----------|-----------|-------| |-------|---------|-------------------|---------|----------|-----------|
+&kp LEFT_CONTROL  &kp Q   &kp W  &kp E      &kp R       &kp T     &kp Y   &kp U     &kp I               &kp O     &kp P      &kp BSPC
+//|-------------|------|-------|----------|-----------|-------| |-------|---------|-------------------|---------|----------|-----------|
+&kp TAB           &kp A   &kp S  &kp D      &kp F       &kp G     &kp H   &kp J     &kp K               &kp L     &kp SEMI   &kp SQT
+//|-------------|------|-------|----------|-----------|-------| |-------|---------|-------------------|---------|----------|-----------|
+&kp LSHFT         &kp Z   &kp X  &kp C      &kp V       &kp B     &kp N   &kp M     &kp COMMA           &kp DOT   &kp FSLH   &kp RSHFT
+//|-------------|------|-------|----------|-----------|-------| |-------|---------|-------------------|---------|----------|-----------|
+/*|----------------------------*\&kp LGUI   &kp SPACE   &mo 1     &mo 2   &kp RET   &kp RIGHT_COMMAND /*-------------------------------|*\
+//                             |----------|-----------|-------| |-------|---------|-------------------|
             >;
         };
 
         navigation_layer {
-            display-name = "Navigation";
-
-            //
-            //  |-------------------------------------------------------------------------------------| |------------------------------------------------------|
-            //  |   ESC    |   1           | 2             | 3             | 4             | 5        | | 6      | 7      | 8      | 9       | 0    |   BKSP   |
-            //  |   BT_CLR |   BT_SEL 0    | BT_SEL 1      | BT_SEL 2      | BT_SEL 3      | BT_SEL 4 | | LEFT   | DOWN   | UP     | RIGHT   |      |          |
-            //  |   SHFT   |   RGB_TOG     | RGB_EFF       | RGB_BRI       | RGB_BRD       |          | |        |        |        |         |      |          |
-            //  |------------------------------------------| LGUI          |               | SPACE    | | RET    |        | RALT   |---------------------------|
-            //                                             |------------------------------------------| |--------------------------|
-
-            bindings = <
-&kp ESC    &kp INSERT      &kp F13           &kp N3        &kp N4            &kp N5      &kp PAGE_UP    &kp LA(LEFT_ARROW)  &kp UP_ARROW       &kp LA(RIGHT_ARROW)  &kp N0  &kp BSPC
-&kp CAPS   &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp CAPS    &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN_ARROW     &kp RIGHT            &trans  &kp BACKSPACE
-&kp LSHFT  &kp LG(Z)       &kp LG(X)         &kp LG(C)     &kp LG(V)         &trans      &trans         &kp HOME            &kp LS(LG(SPACE))  &kp END              &trans  &kp RIGHT_SHIFT
-                                             &trans        &trans            &trans      &mo 3          &trans              &trans
-            >;
-
             label = "Navigation";
+            bindings = <
+//|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
+&kp ESC     &kp INSERT       &kp F13            &kp N3         &kp N4              &kp N5       &kp PAGE_UP     &kp LA(LEFT_ARROW)   &kp UP_ARROW        &kp LA(RIGHT_ARROW)   &trans   &kp BSPC
+//|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
+&kp CAPS    &kp LEFT_SHIFT   &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_COMMAND    &kp CAPS     &kp PAGE_DOWN   &kp LEFT_ARROW       &kp DOWN_ARROW      &kp RIGHT             &trans   &kp BACKSPACE
+//|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
+&kp LSHFT   &kp LG(Z)        &kp LG(X)          &kp LG(C)      &kp LG(V)           &trans       &trans          &kp HOME             &kp LS(LG(SPACE))   &kp END               &trans   &kp RIGHT_SHIFT
+//|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
+/*|------------------------------------------|*\&trans          &trans              &trans       &mo 3           &trans               &trans/*|---------------------------------------------------------|*\
+//                                           |---------------|-------------------|----------| |---------------|--------------------|----------|
+            >;
         };
 
         symbol_layer {
-            display-name = "Symbol";
-
-            //
-            //  |-------------------------------------------------------------------------| |---------------------------------------------------------------|
-            //  | ESC     | !       | @             | #             | $        | %        | | ^      | &        | *             | (       | )    | BKSP     |
-            //  | LCTRL   |         |               |               |          |          | | -      | =        | {             | }       | "|"  | `        |
-            //  | LSHFT   |         |               |               |          |          | | _      | +        | [             | ]       | \    | ~        | // TODO: Fix this row when &mkp is committed
-            //  |-----------------------------------| LGUI          |          | SPACE    | | RET    |          | RALT          |---------------------------|
-            //                                      |-------------------------------------| |-----------------------------------|
-
+            label = "Symbol";
             bindings = <
-&kp DEL         &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN  &kp GT     &kp PLUS   &kp BSPC
-&kp UNDERSCORE  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPS       &kp ASTRK  &kp MINUS  &kp EQUAL
-&kp LEFT        &kp N6    &kp N7  &kp N8    &kp N9    &kp N0       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp CARET      &kp PIPE   &kp BSLH   &kp RIGHT
-                                  &trans    &trans    &mo 3        &trans                &trans                 &trans
+//|------------|----------|--------|----------|----------|-----------| |----------------------|------------------------|---------------|-----------|-----------|-----------|
+&kp DEL          &kp EXCL   &kp AT   &kp HASH   &kp DLLR   &kp PRCNT     &kp LEFT_BRACE         &kp RIGHT_BRACE          &kp LESS_THAN   &kp GT      &kp PLUS    &kp BSPC
+//|------------|----------|--------|----------|----------|-----------| |----------------------|------------------------|---------------|-----------|-----------|-----------|
+&kp UNDERSCORE   &kp N1     &kp N2   &kp N3     &kp N4     &kp N5        &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp AMPS        &kp ASTRK   &kp MINUS   &kp EQUAL
+//|------------|----------|--------|----------|----------|-----------| |----------------------|------------------------|---------------|-----------|-----------|-----------|
+&kp LEFT         &kp N6     &kp N7   &kp N8     &kp N9     &kp N0        &kp LEFT_BRACKET       &kp RIGHT_BRACKET        &kp CARET       &kp PIPE    &kp BSLH    &kp RIGHT
+//|------------|----------|--------|----------|----------|-----------| |----------------------|------------------------|---------------|-----------|-----------|-----------|
+                                     &trans     &trans     &mo 3         &trans                 &trans                   &trans
             >;
         };
 
         function_numpad_layer {
-            bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &kp KP_PLUS     &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE    &kp KP_DOT
-&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &kp KP_MINUS    &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_ASTERISK  &to 4
-&trans  &trans  &trans  &trans   &trans   &trans     &kp LEFT_ARROW  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp RIGHT_ARROW  &to 4
-                        &trans   &trans   &trans     &trans          &kp KP_NUMBER_0  &kp RET
-            >;
-
             label = "Fn+NP";
+            bindings = <
+//|----|--------|--------|---------|---------|---------| |----------------|-----------------|-----------|-----------|-----------------|------------|
+&kp F1   &kp F2   &kp F3   &kp F4    &kp F5    &kp F6      &kp KP_PLUS      &kp KP_N7         &kp KP_N8   &kp KP_N9   &kp KP_DIVIDE     &kp KP_DOT
+//|----|--------|--------|---------|---------|---------| |----------------|-----------------|-----------|-----------|-----------------|------------|
+&kp F7   &kp F8   &kp F9   &kp F10   &kp F11   &kp F12     &kp KP_MINUS     &kp KP_N4         &kp KP_N5   &kp KP_N6   &kp KP_ASTERISK   &to 4
+//|----|--------|--------|---------|---------|---------| |----------------|-----------------|-----------|-----------|-----------------|------------|
+&trans   &trans   &trans   &trans    &trans    &trans      &kp LEFT_ARROW   &kp KP_N1         &kp KP_N2   &kp KP_N3   &kp RIGHT_ARROW   &to 4
+//|----|--------|--------|---------|---------|---------| |----------------|-----------------|-----------|-----------|-----------------|------------|
+                           &trans    &trans    &trans      &trans           &kp KP_NUMBER_0   &kp RET
+            >;
         };
 
         settings_layer {
+            label = "Led BT Media";
             bindings = <
-&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &trans           &trans             &kp C_VOLUME_UP    &trans      &trans            &trans      &kp C_BRI_INC  &to 0
-&rgb_ug RGB_ON  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans           &rgb_ug RGB_HUI  &rgb_ug RGB_HUD    &kp K_MUTE         &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_DEC  &to 4
-&bl BL_SET 0    &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD    &kp C_VOLUME_DOWN  &trans      &trans            &trans      &trans         &to 4
-                                                  &trans           &trans           &trans             &trans             &trans      &trans
+//|------------|-----------------|-----------------|-----------------|-----------------|-----------------| |-------------------|------------|------------------|------------|---------------|-------|
+&bt BT_CLR_ALL   &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &trans            &trans              &kp C_VOLUME_UP     &trans       &trans             &trans       &kp C_BRI_INC   &to 0
+//|------------|-----------------|-----------------|-----------------|-----------------|-----------------| |-------------------|------------|------------------|------------|---------------|-------|
+&rgb_ug RGB_ON   &rgb_ug RGB_SAI   &rgb_ug RGB_SAD   &trans            &rgb_ug RGB_HUI   &rgb_ug RGB_HUD     &kp K_MUTE          &kp C_PREV   &kp C_PLAY_PAUSE   &kp C_NEXT   &kp C_BRI_DEC   &to 4
+//|------------|-----------------|-----------------|-----------------|-----------------|-----------------| |-------------------|------------|------------------|------------|---------------|-------|
+&bl BL_SET 0     &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &rgb_ug RGB_EFR   &rgb_ug RGB_SPI   &rgb_ug RGB_SPD     &kp C_VOLUME_DOWN   &trans       &trans             &trans       &trans          &to 4
+//|------------|-----------------|-----------------|-----------------|-----------------|-----------------| |-------------------|------------|------------------|------------|---------------|-------|
+                                                     &trans            &trans            &trans              &trans              &trans       &trans
             >;
-
-            label = "Led_BT";
         };
     };
 };
