@@ -11,14 +11,6 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    behaviors {
-        sk: sticky_key {
-            compatible = "zmk,behavior-sticky-key";
-            label = "Sticky Key";
-            release-after-ms = <2000>; // Configura el tiempo en ms antes de que se libere automáticamente
-            quick-release;             // Opcional: libera al presionar dos veces rápidamente
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -43,7 +35,7 @@
 //|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
 &kp ESC     &kp INSERT       &kp F13            &kp N3         &kp N4              &kp N5       &kp PAGE_UP     &kp LA(LEFT_ARROW)   &kp UP_ARROW        &kp LA(RIGHT_ARROW)   &trans   &kp BSPC
 //|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
-&kp CAPS    &sk &kp LSHFT    &sk &kp LCTL       &sk &kp LALT   &sk &kp LCMD        &kp CAPS     &kp PAGE_DOWN   &kp LEFT_ARROW       &kp DOWN_ARROW      &kp RIGHT             &trans   &kp BACKSPACE
+&kp CAPS    &kp LSHFT        &kp LCTL           &kp LALT       &kp LCMD            &kp CAPS     &kp PAGE_DOWN   &kp LEFT_ARROW       &kp DOWN_ARROW      &kp RIGHT             &trans   &kp BACKSPACE
 //|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
 &kp LSHFT   &kp LG(Z)        &kp LG(X)          &kp LG(C)      &kp LG(V)           &trans       &trans          &kp HOME             &kp LS(LG(SPACE))   &kp END               &trans   &kp RIGHT_SHIFT
 //|-------|----------------|------------------|--------------|-------------------|----------| |---------------|--------------------|-------------------|---------------------|--------|-----------------|
