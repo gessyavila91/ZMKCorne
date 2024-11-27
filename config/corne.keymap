@@ -27,10 +27,10 @@
         navigation_layer {
             label = "Navigation";
             bindings = <
-&kp ESC    &sk LSHFT       &sk LCTRL  &sk LALT   &sk LCMD   &kp N5      &kp PAGE_UP    &kp LA(LEFT_ARROW)  &kp UP_ARROW       &kp LA(RIGHT_ARROW)  &trans  &kp BSPC
-&kp CAPS   &kp LSHFT       &kp LCTRL  &kp LALT   &kp LCMD   &kp CAPS    &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN_ARROW     &kp RIGHT            &trans  &kp BACKSPACE
-&kp LSHFT  &kp LG(Z)       &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans      &trans         &kp HOME            &kp LS(LG(SPACE))  &kp END              &trans  &kp RIGHT_SHIFT
-                                      &trans     &trans     &trans      &mo 3          &trans              &trans
+&kp ESC    &sk LSHFT  &sk LCTRL  &sk LALT   &sk LCMD   &kp N5      &kp PAGE_UP    &kp LA(LEFT_ARROW)  &kp UP_ARROW       &kp LA(RIGHT_ARROW)  &trans  &kp BSPC
+&kp CAPS   &kp LSHFT  &kp LCTRL  &kp LALT   &kp LCMD   &kp CAPS    &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN_ARROW     &kp RIGHT            &trans  &kp BACKSPACE
+&kp LSHFT  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans      &trans         &kp HOME            &kp LS(LG(SPACE))  &kp END              &trans  &kp RIGHT_SHIFT
+                                 &trans     &trans     &trans      &mo 3          &trans              &trans
             >;
         };
 
@@ -49,9 +49,30 @@
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &kp KP_PLUS     &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE    &kp KP_DOT
 &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &kp KP_MINUS    &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_ASTERISK  &to 4
-&trans  &trans  &trans  &trans   &trans   &trans     &kp LEFT_ARROW  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp RIGHT_ARROW  &to 4
+&trans  &trans  &trans  &trans   &trans   &trans     &kp LEFT_ARROW  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp RIGHT_ARROW  &to 6
                         &trans   &trans   &trans     &trans          &kp KP_NUMBER_0  &kp RET
             >;
+        };
+
+        SKHD-COMBOS {
+            label = "SKHD-COMBOS";
+            bindings = <
+&kp LS(LA(N0))  &kp Q      &kp W      &kp LA(E)  &kp LA(R)  &kp LA(T)    &kp LA(Y)  &kp U      &kp LA(I)  &kp O      &kp P  &to 0
+&none           &kp LA(A)  &kp S      &kp LA(D)  &kp LA(F)  &kp LA(G)    &kp H      &kp LA(J)  &kp LA(K)  &kp LA(L)  &none  &to 5
+&kp LSHFT       &kp Z      &kp LA(X)  &kp C      &kp V      &kp B        &kp LA(N)  &kp LA(M)  &none      &none      &none  &to 6
+                                      &none      &kp LCTRL  &mo 1        &mo 2      &kp RGUI   &none
+            >;
+        };
+
+        SKHD-Space {
+            bindings = <
+&trans      &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &kp LA(N4)     &kp LA(N5)    &kp LA(N6)  &kp LA(N7)    &kp LA(N8)  &kp LA(N9)  &kp LA(N0)  &to 0
+&trans      &trans      &trans      &trans      &trans         &trans        &trans      &trans        &trans      &trans      &trans      &to 4
+&kp LSHIFT  &trans      &trans      &trans      &trans         &trans        &trans      &trans        &trans      &trans      &trans      &kp RSHIFT
+                                    &trans      &kp LG(LCTRL)  &mo 1         &mo 2       &kp LG(RGUI)  &trans
+            >;
+
+            label = "SKHD-Space";
         };
 
         settings_layer {
@@ -59,7 +80,7 @@
             bindings = <
 &bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &trans           &trans             &kp C_VOLUME_UP    &trans      &trans            &trans      &kp C_BRI_INC  &to 0
 &rgb_ug RGB_ON  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans           &rgb_ug RGB_HUI  &rgb_ug RGB_HUD    &kp K_MUTE         &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_DEC  &to 4
-&bl BL_SET 0    &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD    &kp C_VOLUME_DOWN  &trans      &trans            &trans      &trans         &to 4
+&bl BL_SET 0    &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD    &kp C_VOLUME_DOWN  &trans      &trans            &trans      &trans         &to 6
                                                   &trans           &trans           &trans             &trans             &trans      &trans
             >;
         };
