@@ -29,8 +29,7 @@
             bindings = <
 &kp GRAVE  &kp LC(LG(Q))  &kp LS(LG(N3))  &kp LS(N4)  &none      &none        &kp PAGE_UP    &kp HOME        &kp UP_ARROW       &kp END    &none  &trans
 &trans     &kp LSHFT      &kp LCTRL       &kp LALT    &kp LCMD   &kp CAPS     &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT  &none  &none
-&trans     &kp LG(Z)      &kp LG(X)       &
-kp LG(C)   &kp LG(V)  &kp LG(A)    &none          &none           &kp LS(LG(SPACE))  &none      &none  &trans
+&trans     &kp LG(Z)      &kp LG(X)       &kp LG(C)   &kp LG(V)  &kp LG(A)    &none          &none           &kp LS(LG(SPACE))  &none      &none  &trans
                                      &trans      &trans     &trans       &mo 3          &trans          &trans
             >;
         };
