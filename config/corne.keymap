@@ -27,10 +27,10 @@
         navigation_layer {
             label = "Navigation";
             bindings = <
-&kp GRAVE  &kp LC(LG(Q))  &kp LS(LG(N3))  &kp LS(N4)  &none      &none        &kp PAGE_UP    &kp HOME        &kp UP_ARROW       &kp END    &none  &trans
-&trans     &kp LSHFT      &kp LCTRL       &kp LALT    &kp LCMD   &kp CAPS     &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT  &none  &none
-&trans     &kp LG(Z)      &kp LG(X)       &kp LG(C)   &kp LG(V)  &kp LG(A)    &none          &none           &kp LS(LG(SPACE))  &none      &none  &trans
-                                          &trans      &trans     &trans       &mo 3          &trans          &trans
+&kp GRAVE  &kp LC(LG(Q))  &none      &none      &kp LS(LG(N4))  &none        &kp PAGE_UP    &kp HOME        &kp UP_ARROW       &kp END    &none  &trans
+&trans     &kp LSHFT      &kp LCTRL  &kp LALT   &kp LCMD        &kp CAPS     &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT  &none  &none
+&trans     &kp LG(Z)      &kp LG(X)  &kp LG(C)  &kp LG(V)       &kp LG(A)    &none          &none           &kp LS(LG(SPACE))  &none      &none  &trans
+                                     &trans     &trans          &trans       &mo 3          &trans          &trans
             >;
         };
 
@@ -44,44 +44,23 @@
             >;
         };
 
-        function_numpad_layer {
-            label = "Fn+NP";
+        function_key_layer {
+            label = "Fn_Key";
             bindings = <
-&kp F1  &kp F2     &kp F3    &kp F4     &kp F5    &kp F6     &kp KP_PLUS     &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE    &kp KP_DOT
-&kp F7  &kp F8     &kp F9    &kp F10    &kp F11   &kp F12    &kp KP_MINUS    &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_ASTERISK  &to 4
-&trans  &sk LSHFT  &sk LALT  &sk LCTRL  &sk LGUI  &trans     &kp LEFT_ARROW  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp RIGHT_ARROW  &to 6
-                             &trans     &trans    &trans     &trans          &kp KP_NUMBER_0  &kp RET
+&kp F1  &kp F2     &kp F3    &kp F4     &kp F5    &kp F6    &kp F7  &kp F8    &kp F9     &kp F10   &kp F11    &kp F12
+&none   &sk LSHFT  &sk LALT  &sk LCTRL  &sk LGUI  &none     &none   &sk LGUI  &sk LCTRL  &sk LALT  &sk LSHFT  &to 4
+&trans  &none      &none     &none      &none     &none     &none   &none     &none      &none     &none      &none
+                             &trans     &trans    &trans    &trans  &trans    &trans
             >;
-        };
-
-        SKHD-COMBOS {
-            label = "SKHD-COMBOS";
-            bindings = <
-&kp LS(LA(N0))  &none      &none      &kp LA(E)  &kp LA(R)  &kp LA(T)    &kp LA(Y)  &none      &kp LA(I)  &none      &none       &to 0
-&none           &kp LA(A)  &none      &kp LA(D)  &kp LA(F)  &kp LA(G)    &none      &kp LA(J)  &kp LA(K)  &kp LA(L)  &none       &to 5
-&trans          &none      &kp LA(X)  &none      &none      &none        &kp LA(N)  &kp LA(M)  &none      &none      &kp LSHIFT  &to 6
-                                      &trans     &kp LALT   &kp LALT     &kp RGUI   &kp RGUI   &kp RGUI
-            >;
-        };
-
-        SKHD-Space {
-            bindings = <
-&none   &none       &none       &none       &none       &none         &none     &none     &none     &none  &none       &to 0
-&none   &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &kp LA(N4)  &kp LA(N5)    &none     &none     &none     &none  &none       &to 5
-&trans  &kp LA(N6)  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &kp LA(N0)    &none     &none     &none     &none  &kp LSHIFT  &to 6
-                                &trans      &kp LALT    &kp LALT      &kp RGUI  &kp RGUI  &kp RGUI
-            >;
-
-            label = "SKHD-Space";
         };
 
         settings_layer {
             label = "Led BT Media";
             bindings = <
-&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &none            &none              &none   &kp C_VOLUME_DOWN  &kp K_MUTE        &kp C_VOLUME_UP  &kp C_BRI_INC  &to 0
-&rgb_ug RGB_ON  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &none            &rgb_ug RGB_HUI  &rgb_ug RGB_HUD    &none   &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT       &kp C_BRI_DEC  &to 4
-&bl BL_SET 0    &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD    &none   &none              &none             &none            &none          &to 6
-                                                  &trans           &trans           &trans             &trans  &trans             &trans
+&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &none            &none              &none  &kp C_VOLUME_DOWN  &kp K_MUTE        &kp C_VOLUME_UP  &kp C_BRI_INC  &to 0
+&rgb_ug RGB_ON  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SPI    &none  &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT       &kp C_BRI_DEC  &to 0
+&none           &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &rgb_ug RGB_SPD    &none  &none              &none             &none            &none          &none
+                                                  &trans           &trans           &to 0              &to 0  &trans             &trans
             >;
         };
     };
